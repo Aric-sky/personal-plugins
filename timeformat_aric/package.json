@@ -1,0 +1,16 @@
+{
+  "name": "timeformat_aric",
+  "version": "1.1.1",
+  "description": "time format tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "time"
+  ],
+  "author": "aric-sky",
+  "license": "ISC",
+  "_from": "timeformat_aric@1.1.1",
+  "_resolved": "http://registry.npm.taobao.org/timeformat_aric/download/timeformat_aric-1.1.1.tgz"
+}

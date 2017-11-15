@@ -1,0 +1,19 @@
+{
+  "name": "islider_aric",
+  "version": "1.0.3",
+  "description": "rotate image islider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aric-sky/iSlider-gulp.git"
+  },
+  "author": "aric-sky\u001b[D\u001b[D\u001b[\u001b[3~-",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aric-sky/iSlider-gulp/issues"
+  },
+  "homepage": "https://github.com/Aric-sky/iSlider-gulp#readme"
+}

@@ -1,0 +1,108 @@
+
+module.exports = {
+
+//获取对象、数组的长度、元素个数
+  gerLength:function(obj){
+
+  	var typeRes = this.typeCheck(obj).toString().trim();
+
+    if(typeRes == "string" || typeRes == "number"){ //string、number
+      return obj.length;
+
+    }else if(typeRes == "object" || typeRes == "Array"){ //Object、Array
+      var objLen = 0;
+      for(var i in obj){
+        objLen++;
+      }
+      return objLen;
+    }else{  //无法检测类型
+
+      return "function or 无法判断的数据类型";
+    }
+
+  },
+// 判断数据类型
+  typeCheck:function(obj){
+    var objType = typeof(obj);
+    if (objType == "object") {
+      if (obj instanceof Array) { // 当为array时
+        objType = "Array"
+      }
+    }
+    return objType
+  },
+  //首次登录判断,仅判断唯一物理机
+  isFirst:function(){
+    var day = '101';
+    var shareTime = window.localStorage.getItem('shareTime');
+    if (shareTime == null) {
+      window.localStorage.setItem('shareTime', day);
+      return true;
+    }else{
+      return false;
+    }
+  },
+  //移动端，触屏阻止和触发
+  handler:function(event){
+    event.preventDefault();
+  },
+  prevent:function(){
+    document.addEventListener('touchmove', this.handler, false);
+  },
+  dispatch:function(){
+    document.removeEventListener('touchmove', this.handler, false);
+  },
+  //stringly、parsely方法函数
+  stringly:function(obj){
+    return JSON.stringify(obj);
+  },
+  parsely:function(obj){
+    return JSON.parse(obj);
+  },
+//设置单个值
+	localSigleSet:function(item, value){
+		window.localStorage.setItem(item, value);
+	},
+//设置数组的存储值
+  localArrSet:function(item,key,val){
+    var dataList = {};
+    if (this.localGet(item)) {
+      dataList = this.localGet(item);
+    }
+      dataList[key] = val;
+      this.localSigleSet(item, this.stringly(dataList));
+  },
+//获得整个item的内容
+  localGet:function(item){
+    return this.parsely(window.localStorage.getItem(item));
+  },
+
+//地址栏后缀获取
+  linkParamGet:function(p){
+      var url =location.href.split('?');
+      var obj;
+      if(url.length>1){
+          obj = this.param(url[1]);
+      }else{
+          obj = this.param(url);
+      }
+      return obj[p];
+  },
+  //linkGet字符串转化为对象
+  param:function(str){
+      var obj = {};
+      if(str !== undefined && str.indexOf('=')>-1){
+          str = str.replace('&=on','');
+          var arr = str.split('&');
+          for(var i=0;i<arr.length;i++){
+              var  t= arr[i].split('=');
+              obj[t[0]] = t[1];
+          }
+      }
+      return obj;
+  }
+
+
+}
+
+
