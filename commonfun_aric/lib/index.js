@@ -2,9 +2,9 @@
 module.exports = {
 
 //获取对象、数组的长度、元素个数
-  gerLength:function(obj){
+gerLength:function(obj){
 
-  	var typeRes = this.typeCheck(obj).toString().trim();
+ var typeRes = this.typeCheck(obj).toString().trim();
 
     if(typeRes == "string" || typeRes == "number"){ //string、number
       return obj.length;
@@ -22,9 +22,9 @@ module.exports = {
 
   },
 // 判断数据类型
-  typeCheck:function(obj){
-    var objType = typeof(obj);
-    if (objType == "object") {
+typeCheck:function(obj){
+  var objType = typeof(obj);
+  if (objType == "object") {
       if (obj instanceof Array) { // 当为array时
         objType = "Array"
       }
@@ -60,48 +60,60 @@ module.exports = {
     return JSON.parse(obj);
   },
 //设置单个值
-	localSigleSet:function(item, value){
-		window.localStorage.setItem(item, value);
-	},
+localSigleSet:function(item, value){
+  window.localStorage.setItem(item, value);
+},
 //设置数组的存储值
-  localArrSet:function(item,key,val){
-    var dataList = {};
-    if (this.localGet(item)) {
-      dataList = this.localGet(item);
-    }
-      dataList[key] = val;
-      this.localSigleSet(item, this.stringly(dataList));
-  },
+localArrSet:function(item,key,val){
+  var dataList = {};
+  if (this.localGet(item)) {
+    dataList = this.localGet(item);
+  }
+  dataList[key] = val;
+  this.localSigleSet(item, this.stringly(dataList));
+},
 //获得整个item的内容
-  localGet:function(item){
-    return this.parsely(window.localStorage.getItem(item));
-  },
+localGet:function(item){
+  return this.parsely(window.localStorage.getItem(item));
+},
 
 //地址栏后缀获取
-  linkParamGet:function(p){
-      var url =location.href.split('?');
-      var obj;
-      if(url.length>1){
-          obj = this.param(url[1]);
-      }else{
-          obj = this.param(url);
-      }
-      return obj[p];
-  },
+linkParamGet:function(p){
+  var url =location.href.split('?');
+  var obj;
+  if(url.length>1){
+    obj = this.param(url[1]);
+  }else{
+    obj = this.param(url);
+  }
+  return obj[p];
+},
   //linkGet字符串转化为对象
   param:function(str){
-      var obj = {};
-      if(str !== undefined && str.indexOf('=')>-1){
-          str = str.replace('&=on','');
-          var arr = str.split('&');
-          for(var i=0;i<arr.length;i++){
-              var  t= arr[i].split('=');
-              obj[t[0]] = t[1];
-          }
+    var obj = {};
+    if(str !== undefined && str.indexOf('=')>-1){
+      str = str.replace('&=on','');
+      var arr = str.split('&');
+      for(var i=0;i<arr.length;i++){
+        var  t= arr[i].split('=');
+        obj[t[0]] = t[1];
       }
-      return obj;
-  }
+    }
+    return obj;
+  },
 
+  // 让一个高频触发的函数在一定时间内只触发一次
+  debounce:function(func, wait) {
+    var _timestamp, _timer
+    return function () {
+      var now = Date.now()
+      if (_timestamp && ((now - _timestamp) < wait)) {
+        clearTimeout(_timer)
+      }
+      _timestamp = now
+      _timer = setTimeout(func.bind(this, ...arguments), wait)
+    }
+  }
 
 }
 

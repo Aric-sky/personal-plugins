@@ -35,3 +35,4 @@ Mask | Description
 `localArrSet` | 设置数组的存储值,键:item, 值的key:key, 值的value:value, ex: localSet(item,key,val).
 `localGet` | 获得整个item的内容, ex: localGet(item).
 `linkParamGet` | 地址栏后缀获取, ex: linkParamGet(key), key: 键.
+`debounce` | 让一个高频触发的函数在一定时间内只触发一次, ex: debounce(func, wait), func: 反复执行的函数, wait: 等待时间.

@@ -1,14 +1,18 @@
 {
   "name": "commonfun_aric",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "project use frequently function by personal",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "aric"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aric-sky/personal-plugins/tree/master/commonfun_aric"
+  },
   "author": "aricsky\u001b[A\u001b[Dsky\u001b[B\u001b[D\u001b[D",
   "license": "ISC"
 }
