@@ -102,6 +102,7 @@
 ## 数据定义在data中
 
 ```
+
   var data = [{
     height: '100%',
     width: '100%',
@@ -114,11 +115,15 @@
     height: '100%',
     width: '100%',
     content: ""
-}];```
+}];
+
+```
 
 ## 实例化iSlider
 
-```var iSlider = new self.iSlider({
+```
+
+var iSlider = new self.iSlider({
 
     data : data,
     
@@ -136,4 +141,6 @@
     
     type:'dom'
     
-});```
+});
+
+```
