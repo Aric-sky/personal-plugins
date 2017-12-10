@@ -8,10 +8,10 @@ import $lib from 'commonfun_aric'
 
 ```
 
-### gerLength方法使用
+### getLength方法使用
 
 ```
-var len = $lib.gerLength(item)
+var len = $lib.getLength(item)
 //可判断string、number、array、object的数据长度
 ```
 

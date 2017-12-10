@@ -2,7 +2,7 @@
 module.exports = {
 
 //获取对象、数组的长度、元素个数
-gerLength:function(obj){
+getLength:function(obj){
 
  var typeRes = this.typeCheck(obj).toString().trim();
 
