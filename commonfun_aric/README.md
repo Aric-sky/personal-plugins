@@ -22,6 +22,14 @@ var len = $lib.typeCheck(item)
 //可判断string、number、array、object、function
 ```
 
+### compare---对象按属性排序
+```
+arr.sort(compare('age'))
+//arr: [{name: "zlw",age: 24}, {name: "wlz",age: 25},{name: "wlz",age: 29}];
+
+```
+
+
 ### 方法列表
 
 Mask | Description

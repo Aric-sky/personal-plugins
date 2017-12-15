@@ -1,6 +1,6 @@
 {
   "name": "commonfun_aric",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "project use frequently function by personal",
   "main": "lib/index.js",
   "scripts": {
