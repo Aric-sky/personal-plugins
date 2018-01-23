@@ -3,7 +3,7 @@
 ### Install
 
 ```
-npm install timeFormat_aric --save
+npm install timeformat_aric --save
 import fun from 'timeFormat_aric'
 
 ```
