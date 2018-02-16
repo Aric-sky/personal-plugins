@@ -131,6 +131,25 @@ module.exports = {
         return 0;
       }
     }
+  },
+
+  //属性判断是否包含  arg：对象或者数组  item：属性或者单位
+  has: function(arg, item){
+    var type = this.typeCheck(arg);
+    if (type === 'object') {
+      return !object.hasOwnProperty(name)&&(name in object);
+    }else if (type === 'Array') {
+      if(arg.length > 0 ){
+        for(var i= 0, len = arg.length; i< len; i++){
+          if(arr[i] == day){
+            return true;
+          }
+        }
+        return false;
+      }else{
+        return false ;
+      }
+    }
   }
 
 }
