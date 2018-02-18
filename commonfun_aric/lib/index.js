@@ -134,14 +134,14 @@ module.exports = {
   },
 
   //属性判断是否包含  arg：对象或者数组  item：属性或者单位
-  has: function(arg, item){
+  has: function(arg, item){  //true 包含, false 不含
     var type = this.typeCheck(arg);
     if (type === 'object') {
-      return !object.hasOwnProperty(name)&&(name in object);
+      return arg.hasOwnProperty(item);
     }else if (type === 'Array') {
       if(arg.length > 0 ){
         for(var i= 0, len = arg.length; i< len; i++){
-          if(arr[i] == day){
+          if(arg[i] == item){
             return true;
           }
         }
