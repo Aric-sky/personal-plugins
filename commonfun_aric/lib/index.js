@@ -1,3 +1,5 @@
+import { cloneAnything } from './cloneObj'
+
 module.exports = {
 
   //获取对象、数组的长度、元素个数
@@ -150,6 +152,8 @@ module.exports = {
         return false ;
       }
     }
-  }
+  },
+  //clone方法导出
+  cloneAnything: cloneAnything
 
 }
