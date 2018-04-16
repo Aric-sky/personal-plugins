@@ -6,6 +6,9 @@
 - onslidechange
 - onslideend
 - onslidestart
+- iSlider.slide(-1)  后退
+- iSlider.slide(1)  前进
+- iSlider.slide(tarIndex - nowIndex)    跳转到制定的页面
 
 ### iSlider定义在全局，cosole出来看
 
