@@ -1,6 +1,6 @@
 import { cloneAnything } from './cloneObj'
 
-module.exports = {
+export default {
 
   //获取对象、数组的长度、元素个数
   getLength: function (obj) {
@@ -80,7 +80,7 @@ module.exports = {
 
   //地址栏后缀获取
   linkParamGet: function (p) {
-    var url = location.href.split('?');
+    var url = window.location.href.split('?');
     var obj;
     if (url.length > 1) {
       obj = this.param(url[1]);
