@@ -1,4 +1,4 @@
-export function cloneAnything(objectToBeCloned) {
+module.exports = function cloneAnything(objectToBeCloned) {
   "use strict";
   // 如果不是对象则直接返回
   if (!(objectToBeCloned instanceof Object)) {
