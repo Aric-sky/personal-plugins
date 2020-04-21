@@ -1,6 +1,6 @@
-import { cloneAnything } from './cloneObj'
+var cloneAnything = require('./cloneObj')
 
-export default {
+var $lib = {
 
   //获取对象、数组的长度、元素个数
   getLength: function (obj) {
@@ -157,3 +157,5 @@ export default {
   cloneAnything: cloneAnything
 
 }
+
+module.exports = $lib
